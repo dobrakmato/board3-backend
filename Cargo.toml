@@ -1,0 +1,14 @@
+[package]
+name = "ob2-communication"
+version = "0.1.0"
+authors = ["Matej <dobrakmato@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+serde = { version = "1.0.90", features = ["derive"]}
+bitflags = "1.0.4"
+
+[dev-dependencies]
+quickcheck = "0.8.0"
+quickcheck_macros = "0.8.0"
+rand = "0.6.5"
