@@ -1,14 +1,28 @@
 use serde::{Serialize, Deserialize};
 use bitflags::bitflags;
 
-const PALETTE_SIZE: usize = 2;
+const fn color(r: u8, g: u8, b: u8) -> u32 {
+    return (b as u32) << 16 | (g as u32) << 8 | r as u32;
+}
+
+pub const PALETTE_SIZE: usize = 8;
+pub const PALETTE_DEFAULT: Palette = [
+    color(0, 0, 0),
+    color(255, 0, 0),
+    color(0, 255, 0),
+    color(0, 0, 255),
+    color(255, 255, 0),
+    color(0, 255, 255),
+    color(255, 0, 255),
+    color(255, 255, 255)
+];
 
 /* types */
-type Palette = [u32; PALETTE_SIZE];
-type Color = u8;
-type Position = u32;
-type UserId = u8;
-type StepId = u32;
+pub type Palette = [u32; PALETTE_SIZE];
+pub type Color = u8;
+pub type Position = u32;
+pub type UserId = u8;
+pub type StepId = u32;
 
 /* custom types */
 bitflags! {
